@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        // https://jakearchibald.com/2017/es-modules-in-browsers/#nomodule-for-backwards-compatibility
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ]
+}
