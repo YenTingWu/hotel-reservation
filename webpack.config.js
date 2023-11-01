@@ -40,4 +40,7 @@ module.exports = {
       filename: './index.html',
     }),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 };
