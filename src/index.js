@@ -1,8 +1,5 @@
 import ReactDOM from 'react-dom/client';
-
-function App() {
-  return <h1>HI THERE</h1>;
-}
+import { App } from './App.jsx';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
