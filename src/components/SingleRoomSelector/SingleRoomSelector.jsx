@@ -14,11 +14,11 @@ export const SingleRoomSelector = ({
   unallocatedNumber,
   onChange,
 }) => {
-  const handleAdultChange = (value) => {
+  const handleAdultChange = (_, value) => {
     onChange({ adult: value });
   };
 
-  const handleChildChange = (value) => {
+  const handleChildChange = (_, value) => {
     onChange({ child: value });
   };
 

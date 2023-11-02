@@ -10,18 +10,18 @@ export const CustomInputNumber = ({
   onChange,
   onBlur,
 }) => {
-  const handleMinus = () => {
+  const handleMinus = (e) => {
     if (value <= min) return;
 
     const newV = value - step;
-    onChange(Math.max(newV, min));
+    onChange(e, Math.max(newV, min));
   };
 
-  const handleAdd = () => {
+  const handleAdd = (e) => {
     if (value >= max) return;
 
     const newV = value + step;
-    onChange(Math.min(newV, max));
+    onChange(e, Math.min(newV, max));
   };
 
   const handleInputChange = (e) => {
@@ -29,7 +29,7 @@ export const CustomInputNumber = ({
 
     if (isNaN(+value)) return;
 
-    onChange(+value);
+    onChange(e, +value);
   };
 
   const handleInputBlur = (e) => {
@@ -38,11 +38,11 @@ export const CustomInputNumber = ({
     if (isNaN(+value)) return;
 
     if (+value <= min) {
-      onChange(min);
+      onChange(e, min);
     } else if (+value >= max) {
-      onChange(max);
+      onChange(e, max);
     } else {
-      onChange(+value);
+      onChange(e, +value);
     }
   };
 
