@@ -1,5 +1,6 @@
 import { CustomInputNumber } from '../CustomInputNumber';
 import styles from './SingleRoomSelector.module.css';
+import PropTypes from 'prop-types';
 
 // 1. 4-person room
 // 2. the initial number of adults would be 1, and of children would be 0
@@ -63,4 +64,13 @@ export const SingleRoomSelector = ({
       </div>
     </div>
   );
+};
+
+SingleRoomSelector.propTypes = {
+  adult: PropTypes.number,
+  child: PropTypes.number,
+  id: PropTypes.string,
+  disabled: PropTypes.bool,
+  unallocatedNumber: PropTypes.number,
+  onChange: PropTypes.func,
 };

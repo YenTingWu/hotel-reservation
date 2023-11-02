@@ -1,4 +1,5 @@
 import styles from './CustomInputNumber.module.css';
+import PropTypes from 'prop-types';
 
 export const CustomInputNumber = ({
   min,
@@ -76,4 +77,15 @@ export const CustomInputNumber = ({
       </button>
     </div>
   );
+};
+
+CustomInputNumber.propTypes = {
+  min: PropTypes.number,
+  max: PropTypes.number,
+  step: PropTypes.number,
+  name: PropTypes.string,
+  value: PropTypes.number,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
 };

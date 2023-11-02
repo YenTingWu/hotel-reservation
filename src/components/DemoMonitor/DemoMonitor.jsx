@@ -1,4 +1,5 @@
 import styles from './DemoMonitor.module.css';
+import PropTypes from 'prop-types';
 
 export const DemoMonitor = ({
   numberOfPeople,
@@ -30,4 +31,11 @@ export const DemoMonitor = ({
       </div>
     </div>
   );
+};
+
+DemoMonitor.propTypes = {
+  numberOfPeople: PropTypes.number,
+  numberOfRoom: PropTypes.number,
+  onNumberOfPeopleChange: PropTypes.func,
+  onNumberOfRoomChange: PropTypes.func,
 };

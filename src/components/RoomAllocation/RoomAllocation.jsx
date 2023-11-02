@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { SingleRoomSelector } from '../SingleRoomSelector';
 import styles from './RoomAllocation.module.css';
+import PropTypes from 'prop-types';
 
 export const RoomAllocation = ({ guest, room, onChange }) => {
   const [roomList, setRoomList] = useState(
@@ -54,4 +55,10 @@ export const RoomAllocation = ({ guest, room, onChange }) => {
       </div>
     </section>
   );
+};
+
+RoomAllocation.propTypes = {
+  guest: PropTypes.number,
+  room: PropTypes.number,
+  onChange: PropTypes.func,
 };
