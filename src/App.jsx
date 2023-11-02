@@ -14,14 +14,14 @@ export function App() {
   return (
     <div className={styles.app}>
       <DemoMonitor
-        numberOfPeople={numberOfPeople}
-        numberOfRoom={numberOfRoom}
+        numberOfPeople={+numberOfPeople}
+        numberOfRoom={+numberOfRoom}
         onNumberOfPeopleChange={(v) => setNumberOfPeople(v)}
         onNumberOfRoomChange={(v) => setNumberOfRoom(v)}
       />
       <RoomAllocation
-        guest={numberOfPeople}
-        room={numberOfRoom}
+        guest={+numberOfPeople}
+        room={+numberOfRoom}
         onChange={handleChange}
       />
     </div>

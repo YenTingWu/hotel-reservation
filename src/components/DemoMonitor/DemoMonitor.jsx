@@ -15,7 +15,7 @@ export const DemoMonitor = ({
           value={numberOfPeople}
           onChange={(e) => {
             if (isNaN(+e.target.value)) return;
-            onNumberOfPeopleChange(e.target.value);
+            onNumberOfPeopleChange(+e.target.value);
           }}
         />
       </div>
@@ -25,7 +25,7 @@ export const DemoMonitor = ({
           value={numberOfRoom}
           onChange={(e) => {
             if (isNaN(+e.target.value)) return;
-            onNumberOfRoomChange(e.target.value);
+            onNumberOfRoomChange(+e.target.value);
           }}
         />
       </div>
