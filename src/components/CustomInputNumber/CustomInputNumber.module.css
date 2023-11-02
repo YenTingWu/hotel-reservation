@@ -14,6 +14,12 @@
   font-size: 16px;
 }
 
+.container > button:disabled {
+  background-color: #eeeeee;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .container > button:active {
   border: 2px solid #86bedd;
   color: #86bedd;

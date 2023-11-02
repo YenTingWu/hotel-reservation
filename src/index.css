@@ -14,3 +14,10 @@ body,
 button {
   cursor: pointer;
 }
+
+button::selection {
+  background-color: transparent;
+}
+button::-moz-selection {
+  background-color: transparent;
+}
