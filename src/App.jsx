@@ -6,11 +6,9 @@ import { RoomAllocation } from './components/RoomAllocation';
 export function App() {
   const [numberOfPeople, setNumberOfPeople] = useState(10);
   const [numberOfRoom, setNumberOfRoom] = useState(3);
-  const [result, setResult] = useState(null);
 
   const handleChange = (result) => {
     console.log(result);
-    setResult(JSON.stringify(result, null, 2));
   };
 
   return (
@@ -18,7 +16,6 @@ export function App() {
       <DemoMonitor
         numberOfPeople={numberOfPeople}
         numberOfRoom={numberOfRoom}
-        result={result}
         onNumberOfPeopleChange={(v) => setNumberOfPeople(v)}
         onNumberOfRoomChange={(v) => setNumberOfRoom(v)}
       />

@@ -3,7 +3,6 @@ import styles from './DemoMonitor.module.css';
 export const DemoMonitor = ({
   numberOfPeople,
   numberOfRoom,
-  result,
   onNumberOfPeopleChange,
   onNumberOfRoomChange,
 }) => {
@@ -29,7 +28,6 @@ export const DemoMonitor = ({
           }}
         />
       </div>
-      <div>{result}</div>
     </div>
   );
 };
