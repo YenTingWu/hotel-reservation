@@ -8,6 +8,11 @@ export function App() {
   const [numberOfRoom, setNumberOfRoom] = useState(3);
   const [result, setResult] = useState(null);
 
+  const handleChange = (result) => {
+    console.log(result);
+    setResult(JSON.stringify(result, null, 2));
+  };
+
   return (
     <div className={styles.app}>
       <DemoMonitor
@@ -20,10 +25,7 @@ export function App() {
       <RoomAllocation
         guest={numberOfPeople}
         room={numberOfRoom}
-        onChange={(result) => {
-          console.log(result);
-          setResult(result);
-        }}
+        onChange={handleChange}
       />
     </div>
   );

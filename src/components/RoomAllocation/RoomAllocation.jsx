@@ -9,15 +9,12 @@ export const RoomAllocation = ({ guest, room, onChange }) => {
   );
 
   const handleRoomChange = (index) => (newValue) => {
-    setRoomList((prev) => {
-      const newPrev = [...prev];
+    const newRoomList = [...roomList];
 
-      newPrev[index] = { ...newPrev[index], ...newValue };
+    newRoomList[index] = { ...newRoomList[index], ...newValue };
 
-      onChange(newPrev.map(({ adult, child }) => ({ adult, child })));
-
-      return newPrev;
-    });
+    onChange(newRoomList.map(({ adult, child }) => ({ adult, child })));
+    setRoomList(newRoomList);
   };
 
   const totalAllocatedPeople = roomList.reduce(
@@ -32,7 +29,7 @@ export const RoomAllocation = ({ guest, room, onChange }) => {
     setRoomList(
       Array.from({ length: room }, () => ({ adult: 1, child: 0, id: uuidv4() }))
     );
-  }, [guest, room]);
+  }, [room]);
 
   return (
     <section className={styles.container}>

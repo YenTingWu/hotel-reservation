@@ -29,7 +29,7 @@ export const DemoMonitor = ({
           }}
         />
       </div>
-      <div>{JSON.stringify(result, null, 2)}</div>
+      <div>{result}</div>
     </div>
   );
 };
