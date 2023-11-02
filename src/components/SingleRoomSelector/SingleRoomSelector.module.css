@@ -1,0 +1,31 @@
+.room {
+  width: 100%;
+}
+
+.room:not(:first-child()) {
+  border-bottom: 1px solid #cacaca;
+}
+
+.room h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.room > *:not(:first-child) {
+  margin-top: 8px;
+}
+
+.number-of-people-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.generation > div {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.generation > span {
+  font-size: 12px;
+  color: #cccccc;
+}
