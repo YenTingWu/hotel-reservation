@@ -10,6 +10,7 @@ export const SingleRoomSelector = ({
   adult,
   child,
   id,
+  disabled,
   unallocatedNumber,
   onChange,
 }) => {
@@ -38,8 +39,9 @@ export const SingleRoomSelector = ({
           name={`${id}_adult`}
           value={adult}
           max={max - child}
-          // The minimum number of adults should be 1
           step={1}
+          disabled={disabled}
+          // The minimum number of adults should be 1
           min={1}
           onChange={handleAdultChange}
         />
@@ -53,6 +55,7 @@ export const SingleRoomSelector = ({
           value={child}
           max={max - adult}
           step={1}
+          disabled={disabled}
           // No limitation
           min={0}
           onChange={handleChildChange}

@@ -4,7 +4,7 @@ import { SingleRoomSelector } from '../SingleRoomSelector';
 import styles from './RoomAllocation.module.css';
 
 export const RoomAllocation = ({
-  guest = 10,
+  guest = 4,
   room = 4,
   onChange = console.log,
 }) => {
@@ -30,6 +30,7 @@ export const RoomAllocation = ({
   );
 
   const unallocatedNumber = guest - totalAllocatedPeople;
+  const disabled = guest === room;
 
   return (
     <section className={styles.container}>
@@ -46,6 +47,7 @@ export const RoomAllocation = ({
             id={id}
             adult={adult}
             child={child}
+            disabled={disabled}
             unallocatedNumber={unallocatedNumber}
             onChange={handleRoomChange(index)}
           />
