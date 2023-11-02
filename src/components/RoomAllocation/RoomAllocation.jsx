@@ -3,11 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { SingleRoomSelector } from '../SingleRoomSelector';
 import styles from './RoomAllocation.module.css';
 
-export const RoomAllocation = ({
-  guest = 4,
-  room = 4,
-  onChange = console.log,
-}) => {
+export const RoomAllocation = ({ guest, room, onChange }) => {
   const [roomList, setRoomList] = useState(
     Array.from({ length: room }, () => ({ adult: 1, child: 0, id: uuidv4() }))
   );
@@ -18,7 +14,7 @@ export const RoomAllocation = ({
 
       newPrev[index] = { ...newPrev[index], ...newValue };
 
-      onChange(newPrev);
+      onChange(newPrev.map(({ adult, child }) => ({ adult, child })));
 
       return newPrev;
     });

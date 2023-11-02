@@ -4,7 +4,11 @@ import { RoomAllocation } from './components/RoomAllocation';
 export function App() {
   return (
     <div className={styles.app}>
-      <RoomAllocation />
+      <RoomAllocation
+        guest={9}
+        room={3}
+        onChange={(result) => console.log(result)}
+      />
     </div>
   );
 }
