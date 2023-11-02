@@ -1,0 +1,19 @@
+.row-container {
+  width: 360px;
+}
+
+.row-container > *:not(:first-child) {
+  margin-top: 8px;
+}
+
+.row {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.row > input {
+  min-width: 150px;
+  width: 150px;
+  margin-right: 10px;
+}
