@@ -4,8 +4,14 @@
     "es2021": true,
     "jest": true
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "extends": [
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "prettier",
     "plugin:prettier/recommended"
   ],
@@ -24,6 +30,6 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "react/react-in-jsx-scope": "off"
+    "react/prop-types": "off"
   }
 }
