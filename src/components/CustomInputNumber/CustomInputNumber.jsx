@@ -2,7 +2,7 @@ import styles from './CustomInputNumber.module.css';
 
 export const CustomInputNumber = ({
   min,
-  max,
+  max = Infinity,
   step,
   name,
   value,
@@ -11,18 +11,19 @@ export const CustomInputNumber = ({
   onBlur,
 }) => {
   const handleMinus = () => {
-    onChange((prev) => {
-      const newV = prev - step;
-      return newV <= min ? min : newV;
-    });
+    if (value <= min) return;
+
+    const newV = value - step;
+
+    onChange(Math.max(newV, min));
   };
 
   const handleAdd = () => {
-    onChange((prev) => {
-      const newV = prev + step;
+    if (value >= max) return;
 
-      return newV >= max ? max : newV;
-    });
+    const newV = value + step;
+
+    onChange(Math.min(newV, max));
   };
 
   const handleInputChange = (e) => {
@@ -30,7 +31,13 @@ export const CustomInputNumber = ({
 
     if (isNaN(+value)) return;
 
-    onChange(value);
+    if (+value <= min) {
+      onChange(min);
+    } else if (+value >= max) {
+      onChange(max);
+    } else {
+      onChange(+value);
+    }
   };
 
   return (
