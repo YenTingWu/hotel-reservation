@@ -21,14 +21,9 @@
   "rules": {
     "no-use-before-define": "off",
     "react/jsx-filename-extension": ["warn"],
-    "max-len": [
-      "warn",
-      { "code": 100, "ignoreComments": true, "ignoreUrls": true }
-    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "react/react-in-jsx-scope": "off"
   }
 }
