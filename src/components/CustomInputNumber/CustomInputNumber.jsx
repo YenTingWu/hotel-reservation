@@ -42,7 +42,7 @@ export const CustomInputNumber = ({
 
   return (
     <div className={styles.container}>
-      <button onClick={handleMinus} disabled={disabled}>
+      <button onClick={handleMinus} disabled={value <= min}>
         -
       </button>
       <input
@@ -57,7 +57,7 @@ export const CustomInputNumber = ({
         onBlur={onBlur}
         disabled={disabled}
       />
-      <button onClick={handleAdd} disabled={disabled}>
+      <button onClick={handleAdd} disabled={value >= max}>
         +
       </button>
     </div>

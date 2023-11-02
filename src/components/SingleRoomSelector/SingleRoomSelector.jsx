@@ -1,7 +1,18 @@
 import { CustomInputNumber } from '../CustomInputNumber';
 import styles from './SingleRoomSelector.module.css';
 
-export const SingleRoomSelector = ({ adult, child, id, onChange }) => {
+// 1. 4-person room
+// 2. the initial number of adults would be 1, and of children would be 0
+
+const MAX_NUMBER_OF_PEOPLE = 4;
+
+export const SingleRoomSelector = ({
+  adult,
+  child,
+  id,
+  unallocatedNumber,
+  onChange,
+}) => {
   const handleAdultChange = (value) => {
     onChange({ adult: value });
   };
@@ -9,6 +20,11 @@ export const SingleRoomSelector = ({ adult, child, id, onChange }) => {
   const handleChildChange = (value) => {
     onChange({ child: value });
   };
+
+  const max = Math.min(
+    MAX_NUMBER_OF_PEOPLE,
+    unallocatedNumber + (adult + child)
+  );
 
   return (
     <div className={styles.room}>
@@ -21,8 +37,9 @@ export const SingleRoomSelector = ({ adult, child, id, onChange }) => {
         <CustomInputNumber
           name={`${id}_adult`}
           value={adult}
+          max={max - child}
+          // The minimum number of adults should be 1
           step={1}
-          max={10}
           min={1}
           onChange={handleAdultChange}
         />
@@ -34,9 +51,10 @@ export const SingleRoomSelector = ({ adult, child, id, onChange }) => {
         <CustomInputNumber
           name={`${id}_child`}
           value={child}
+          max={max - adult}
           step={1}
-          max={10}
-          min={1}
+          // No limitation
+          min={0}
           onChange={handleChildChange}
         />
       </div>

@@ -29,13 +29,15 @@ export const RoomAllocation = ({
     0
   );
 
+  const unallocatedNumber = guest - totalAllocatedPeople;
+
   return (
     <section className={styles.container}>
       <h2 className={styles.banner}>
         住客人數：{guest} 人 / {room} 房
       </h2>
       <div className={styles['unallocated-section']}>
-        尚未分配人數：{guest - totalAllocatedPeople} 人
+        尚未分配人數：{unallocatedNumber} 人
       </div>
       <div>
         {roomList.map(({ adult, child, id }, index) => (
@@ -44,6 +46,7 @@ export const RoomAllocation = ({
             id={id}
             adult={adult}
             child={child}
+            unallocatedNumber={unallocatedNumber}
             onChange={handleRoomChange(index)}
           />
         ))}
