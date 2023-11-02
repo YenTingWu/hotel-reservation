@@ -30,7 +30,7 @@ export const RoomAllocation = ({ guest, room, onChange }) => {
     setRoomList(
       Array.from({ length: room }, () => ({ adult: 1, child: 0, id: uuidv4() }))
     );
-  }, [room]);
+  }, [room, guest]);
 
   return (
     <section className={styles.container}>
