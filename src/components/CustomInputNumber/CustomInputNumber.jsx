@@ -33,8 +33,6 @@ export const CustomInputNumber = ({
   };
 
   const handleInputBlur = (e) => {
-    onBlur?.(e);
-
     const { value } = e.target;
 
     if (isNaN(+value)) return;
@@ -49,8 +47,12 @@ export const CustomInputNumber = ({
   };
 
   return (
-    <div className={styles.container}>
-      <button onClick={handleMinus} disabled={value <= min || disabled}>
+    <div className={styles.container} onBlur={onBlur}>
+      <button
+        name="minus-button"
+        onClick={handleMinus}
+        disabled={value <= min || disabled}
+      >
         -
       </button>
       <input
@@ -65,7 +67,11 @@ export const CustomInputNumber = ({
         onBlur={handleInputBlur}
         disabled={disabled}
       />
-      <button onClick={handleAdd} disabled={value >= max || disabled}>
+      <button
+        name="add-button"
+        onClick={handleAdd}
+        disabled={value >= max || disabled}
+      >
         +
       </button>
     </div>
